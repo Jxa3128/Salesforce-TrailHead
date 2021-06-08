@@ -1,0 +1,17 @@
+<template>
+	<p> {title} </p>
+	<template for:each={positions} for:item='position'>
+	<lightning-card key = {position.symbol} title={position.symbol}>
+	<p class="slds-p-horizontal_small"> {position.qty} * <b>{position.price} </b>
+	</p>
+	</lightning-card>
+	</template>
+
+	<lightning-button variant="brand" label="Get Quotes" title="Get Quotes" onclick={handleGetQuoteClick}>
+	</lightning-button>
+
+	<p> Total : {total} </p>
+
+	<lightning-datatable key-field = "symbol" data={positions} columns = {columns}>
+	</lightning-datatable>
+</template>
